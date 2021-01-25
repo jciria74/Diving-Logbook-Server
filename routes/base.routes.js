@@ -88,7 +88,6 @@ router.post("/newDive", (req, res, next) => {
 });
 
 //Ruta para obtener todas las inmersiones de un usuario
-
 router.post("/myDives", (req, res) => {
   const { owner } = req.body;
 
