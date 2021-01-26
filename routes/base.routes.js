@@ -17,9 +17,9 @@ const checkRole = (admittedRoles) => (req, res, next) =>
 
 // Endpoints
 
-/*
-router.get('/', (req, res) => res.render('index'))
+router.get("/", (req, res) => res.render("index"));
 
+/*
 router.get('/perfil', ensureAuthenticated, checkRole(['GUEST', 'EDITOR', 'ADMIN']), (req, res) => res.render('profile', { user: req.user, isAdmin: req.user.role.includes('ADMIN') }))
 
 router.get('/editar-contentidos', ensureAuthenticated, checkRole(['EDITOR', 'ADMIN']), (req, res) => res.render('context-editor', { user: req.user }))
