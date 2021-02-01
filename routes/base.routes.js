@@ -89,12 +89,27 @@ router.post("/newDive", (req, res, next) => {
 
 //Ruta para obtener todas las inmersiones de un usuario
 router.post("/myDives", (req, res) => {
-  const { owner } = req.body;
+  const { _idUser } = req.body;
 
-  User.findById(owner)
+  User.findById(_idUser)
     .populate("dives")
     .then((result) => {
-      res.send(result);
+      res.send(result.dives);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+//Ruta para obtener la última inmersión de un usuario por _id
+
+router.post("/lastDive", (req, res) => {
+  const { _idUser } = req.body;
+
+  User.findById(_idUser)
+    .populate("dives")
+    .then((result) => {
+      res.send(result.dives[result.dives.length - 1]);
     })
     .catch((err) => {
       console.log(err);
