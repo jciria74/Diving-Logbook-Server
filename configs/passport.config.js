@@ -13,6 +13,10 @@ module.exports = (app) => {
       secret: "webmad1020",
       resave: true,
       saveUninitialized: true,
+      cookie: {
+        sameSite: "none",
+        secure: true,
+      },
     })
   );
 
