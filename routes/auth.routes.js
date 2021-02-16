@@ -62,7 +62,7 @@ router.get("/inicio-sesion", (req, res) =>
 // Inicio sesión (gestión)
 router.post("/inicio-sesion", (req, res, next) => {
   passport.authenticate("local", (err, theUser, failureDetails) => {
-    if (!theUser.username || !theUser.password) {
+    if (!req.body.username || !req.body.password) {
       res.json({ message: "Rellena todos los campos" }).status(400);
       return;
     }

@@ -5,6 +5,7 @@ const diveSchema = new Schema({
   owner: { type: Schema.Types.ObjectId, ref: "User" },
   date: Date,
   register: Number,
+  diveCenter: String,
   place: String,
   country: String,
   outside_temperature: Number,

@@ -42,7 +42,7 @@ module.exports = (app) => {
             return next(err);
           }
           if (!user) {
-            return next(null, false, { message: "Usario no registrado" });
+            return next(null, false, { message: "Usuario no registrado" });
           }
           if (!bcrypt.compareSync(password, user.password)) {
             return next(null, false, { message: "Contraseña incorrecta" });
